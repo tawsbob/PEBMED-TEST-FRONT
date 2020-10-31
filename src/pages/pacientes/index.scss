@@ -1,0 +1,15 @@
+.pacientes-page-container {
+
+    h1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .table-container {
+        .table-head, 
+        .table-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
+}

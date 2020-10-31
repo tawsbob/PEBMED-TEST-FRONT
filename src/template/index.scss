@@ -1,0 +1,26 @@
+.template-container {
+    display: flex;
+    align-items:stretch;
+    min-height: 100vh;
+    .sidebar-container {
+        min-width: 250px;
+        background-color: var(--main-color);
+        box-sizing: border-box;
+        padding:20px;
+
+        nav a {
+            display: block;
+            padding:10px 20px;
+            &:hover {
+                background-color: var(--hover-color);
+                color:#fff;
+            }
+        }
+
+    }
+    .content-container {
+        flex: 1;
+        box-sizing: border-box;
+        padding: 40px;
+    }
+}
