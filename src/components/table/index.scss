@@ -1,5 +1,11 @@
 .table-container {
     border:1px #e4e4e4 solid;
+
+    .table-head {
+        font-weight: bold;
+        background-color: #f3f3f3;
+     }
+
     .table-head-td,
     .table-body-td {
         padding:10px;

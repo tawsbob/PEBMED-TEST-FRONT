@@ -7,9 +7,9 @@ function OrderItemByKey(element, heading){
         const transformed = h.transform ? h.transform( element[ h.key ] ) : null
         const content = h.content ? h.content( element ) : transformed || element[ h.key ]
 
-        console.log(
+       /* console.log(
             h, transformed
-        )
+        )*/
 
         if( content ){
             acc.push(
@@ -33,7 +33,7 @@ function Table({ heading, content }) {
         <div className="table-body">
             {
               content && content.map(
-                (c)=>(OrderItemByKey(c, heading))
+              (c)=>(<div className="tr">{ OrderItemByKey(c, heading) }</div>)
               )
             }
         </div>

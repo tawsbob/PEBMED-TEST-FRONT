@@ -1,9 +1,19 @@
 .template-container {
+    
     display: flex;
     align-items:stretch;
     min-height: 100vh;
+
+    @media only screen and (max-width:786px){
+        flex-direction: column-reverse;
+    }
+
     .sidebar-container {
-        min-width: 250px;
+
+        @media only screen and (min-width:786px){
+            min-width: 250px;
+        }
+        
         background-color: var(--main-color);
         box-sizing: border-box;
         padding:20px;
@@ -24,3 +34,4 @@
         padding: 40px;
     }
 }
+

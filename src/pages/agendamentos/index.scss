@@ -1,6 +1,4 @@
-.pacientes-page-container {
-
-
+.agendamento-page-container {
     h1 {
         display: flex;
         justify-content: space-between;
@@ -11,7 +9,7 @@
         .table-head, 
         .table-body .tr {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 }

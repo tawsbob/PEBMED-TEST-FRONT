@@ -139,10 +139,6 @@ function Pacientes() {
     setIsCreating(false)
   }
 
-  function newPaciente(){
-    setIsCreating(true)
-  }
-
   const isInEditMode = (pacienteEdit !== null)
 
 
@@ -156,7 +152,7 @@ function Pacientes() {
                 </h1>
                 <Table heading={TABLE_HEAD} content={pacientes} />
                 
-                <dialog open={isCreating || isInEditMode}>
+                <dialog className="modal" open={isCreating || isInEditMode}>
                     <h4>{ isInEditMode ? 'Editar usuário' : 'Cadastrar novo paciente' }</h4>
                     <PacienteForm getRefs={getRef} />
 

@@ -10,7 +10,7 @@ function PacienteForm({ getRefs }){
     const inputAltura = useRef(null);
     const inputPeso = useRef(null);
 
-    getRefs({
+    getRefs && getRefs({
         inputNome,
         inputTelefone,
         inputSexo,
