@@ -1,4 +1,5 @@
 import { useEffect, useContext, useState } from 'react'
+import { Link } from "react-router-dom";
 import Template from '../../template';
 import { Table, PacienteForm } from '../../components';
 import AppContext from '../../context';
@@ -28,7 +29,8 @@ function Pacientes() {
 
     {
         key: 'nome',
-        text: 'Nome'
+        text: 'Nome',
+        content: (p)=>(<Link to={`/paciente/${p.id}`}>{ p.nome}</Link>)
     },
     {
         key: 'nascimento',
@@ -56,7 +58,7 @@ function Pacientes() {
         text: 'Ação',
         content: ( paciente )=>(
             <>
-                <button onClick={ ()=>{ delPaciente(paciente) } } >Apagar</button>
+                <button className="danger" onClick={ ()=>{ delPaciente(paciente) } } >Apagar</button>
                 <button onClick={ ()=>{ setFormValue(paciente) } } >Editar</button>
             </>
         )
@@ -158,7 +160,7 @@ function Pacientes() {
 
                     { !isInEditMode && (<button onClick={ sendForm }>Cadastrar novo paciente</button>) }
                     { isInEditMode && (<button onClick={ savePaciente }>Salvar</button>) }
-                    <button onClick={ cancel }>Cancelar</button>
+                    <button className="danger" onClick={ cancel }>Cancelar</button>
                 </dialog>
 
             </div>

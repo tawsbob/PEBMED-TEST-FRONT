@@ -27,6 +27,7 @@ function ConsultaForm({ getRefs }){
     return (
         <div className="form">
             <select ref={inputPaciente} list="paciente" id="paciente">
+                <option>Selecione um paciente</option>
                 {
                     paciente.map((p)=>(
                         <option value={p.id} key={p.id}>{ p.nome }</option>

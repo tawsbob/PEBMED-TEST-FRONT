@@ -1,0 +1,16 @@
+.paciente-page-container {
+
+    h1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .paciente-table {
+        border:1px solid #e4e4e4;
+        padding:0;
+        td {
+            padding: 10px;
+            border:1px solid #e4e4e4;
+        }
+    }
+}

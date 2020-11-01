@@ -10,7 +10,7 @@ function Agendamento(){
     const Context = useContext(AppContext)
     const [ consultas, setConsultas ] = useState([])
     const [ agendamento, setAgendamento ] = useState(null)
-
+    const [ isCreating, setIsCreating ] = useState(false)
     let refs = null
 
     const HEADING_TABLE = [
@@ -29,7 +29,7 @@ function Agendamento(){
             text: 'Ações',
             content: (consulta)=>(
                 <>
-                    <button onClick={ ()=>{ deletarConsulta(consulta) } }>Deletar</button>
+                    <button className="danger" onClick={ ()=>{ deletarConsulta(consulta) } }>Deletar</button>
                     <button onClick={ ()=>{ editarAgendamento( consulta ) } } >Alterar</button>
                 </>
             )
@@ -97,6 +97,11 @@ function Agendamento(){
 
     function cancelar(){
         setAgendamento(null)
+        setIsCreating(false)
+    }
+
+    function create(){
+        setIsCreating(true)
     }
 
     useEffect(()=>{
@@ -122,17 +127,17 @@ function Agendamento(){
             <div className="agendamento-page-container">
                 <h1>
                     <span>Agendamentos</span>
-                    <button> Crar agendamento</button>
+                    <button onClick={create}> Crar agendamento</button>
                 </h1>
 
                 <Table heading={HEADING_TABLE} content={consultas} />
                 
-                <dialog className="modal" open={true}>
+                <dialog className="modal" open={isCreating || isEditing}>
                     <h4>{ isEditing ? 'Modificar agendamento' : 'Agendar novo paciente' }</h4>
                     <ConsultaForm getRefs={getRefs} />
                     { !isEditing && (<button onClick={agendar}>Agendar</button>) }
                     { isEditing && (<button onClick={modificar}>Modificar</button>) }    
-                    <button onClick={cancelar}>Cancelar</button>
+                    <button className="danger"  onClick={cancelar}>Cancelar</button>
                 </dialog>
                 
             </div>

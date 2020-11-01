@@ -1,4 +1,4 @@
-import { Home, Pacientes, Agendamentos } from './pages'
+import { Home, Pacientes, Paciente, Agendamentos } from './pages'
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +21,7 @@ function App() {
         <Switch>
           { pageRoute(Home, '/') }
           { pageRoute(Pacientes, '/pacientes') }
+          { pageRoute(Paciente, '/paciente/:id') }
           { pageRoute(Agendamentos, '/agendamento') }
         </Switch>
       </ContextProvider>
