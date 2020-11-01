@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live conding this repo
+
+[Link here!](https://www.youtube.com/watch?v=zlJIAJROvoo)
+
 ## Before installation
 
 ```bash
